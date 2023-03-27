@@ -9,5 +9,5 @@ public interface UserService {
     //creste User
     void save(User user);
     List<User> findAll();
-    User getById(int id);
+    User findById(int id);
 }

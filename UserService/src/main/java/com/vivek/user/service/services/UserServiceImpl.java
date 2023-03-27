@@ -1,8 +1,8 @@
-package com.vivek.user.service.repositories;
+package com.vivek.user.service.services;
 
-import com.vivek.user.service.exception.ResourceNotFoundException;
 import com.vivek.user.service.entities.User;
-import com.vivek.user.service.services.UserService;
+import com.vivek.user.service.exception.ResourceNotFoundException;
+import com.vivek.user.service.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getById(int id) {
+    public User findById(int id) {
 
         return userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User with given id is not found on server!!"));
     }
